@@ -1,0 +1,36 @@
+{% extends "Layout.html" %}
+
+{%block heading%}
+<div class="text-right">
+  <small>{{MonCompte}}</small>
+  <div><a href="/logout">Se déconnecter</a></div>
+</div>
+
+{%endblock%}
+
+{%block body%}
+<div class="text-bleu">Voici le résultat de la recherche</div>
+<div class="dropdown-divider"></div>
+
+<div class="container-fluid">
+  <div class= "row d-inline-flex">
+  {% for livre in livres %}
+    <div class ="col-6 col-sm-4 col-md-3 p-2">
+      <div class="card h-100 border-primary mb-3">
+        <div class="card-body">
+          <h4 class="card-title">{{livre['title']}}</h4>
+          <h6 class="card-text">{{livre['author']}}</h6>
+        </div>
+        <div class="card-footer">
+          <div><a href="/livre/{{livre['isbn']}}">En savoir plus</a></div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}  
+  </div>
+</div>
+
+<div class="text-left"><a href="/">Retour à la page d'accueil</a></div>
+<div><a href="/MonCompte">Retour vers la Recherche</a></div>
+
+{%endblock%}

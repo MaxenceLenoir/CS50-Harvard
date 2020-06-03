@@ -1,0 +1,23 @@
+.text-bleu {
+  font-size:20px;
+  color:rgb(12, 110, 221);
+  font-weight:bold;
+}
+
+.bienvenue {
+  font-size:30px;
+  color:rgb(5, 108, 226);
+  font-weight:bold;
+}
+
+.accueil {
+  font-size:18px;
+  color:rgb(5, 108, 226);
+}
+
+.presentation-livre {
+  font-size:16px;
+  color:rgb(5, 108, 226);
+  font-weight:bold;
+  text-decoration:underline;
+}

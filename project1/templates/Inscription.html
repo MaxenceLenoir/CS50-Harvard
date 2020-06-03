@@ -1,0 +1,36 @@
+{% extends "Layout.html" %}
+
+{%block heading%}
+<div class="text-center bienvenue">Inscription</a></div>
+{%endblock%}
+
+{%block body%}
+<form action="/inscription" method="post">
+  <div class="form-group row">
+    <div class="col-5"></div>
+    <div class="col-xs-6 mr-3"><span class="accueil">Identifiant</span>
+      <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Username" type="text"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-5"></div>
+    <div class="col-xs-6 mr-3"><span class="accueil">Mot de passe</span>
+      <input class="form-control" name="password" placeholder="passeword" type="password"/>
+    </div>   
+  </div>
+  <div class="form-group row">
+    <div class="col-5"></div>
+    <div class="col-xs-6 mr-3"><span class="accueil">Confirmation mot de passe</span>
+      <input class="form-control" name="confirmation" placeholder="confirm password" type="password"/>
+    </div>
+  </div>   
+  <div class="form-group row mb-2">
+    <div class="col-7"></div>
+    <button class="btn btn-primary" type="submit">Valider</button>
+  </div>
+</form>
+<div class="form-group row">
+  <div class="col-7"></div>
+  <div><a href="/login">Déjà un compte ?</a></div>
+</div>
+{%endblock%}

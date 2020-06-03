@@ -1,0 +1,25 @@
+{% extends "Layout.html" %}
+
+{%block heading%}
+<div class="text-center">S'enregistrer ou <a href="/inscription">créer un compte</a></div>
+{%endblock%}
+
+{%block body%}
+<form action="/login" method="post">
+  <div class="form-group row">
+    <div class="col-5"></div>
+    <div class="col-2 mr-3 mb-3"><span class="accueil">Identifiant</span>
+      <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Username" type="text" widht="50">
+    </div>
+    <div class="col-5"></div>
+    <div class="col-2 mr-3 mb-3"><span class="accueil">Mot de passe</span>
+      <input class="form-control" name="password" placeholder="password" type="password">
+    </div>
+    <div class="col-6"></div>
+    <div class="col-2 mr-3">
+      <button class="btn btn-primary" type="submit">Se Connecter</button>
+    </div>
+  </div>
+</form>
+<div class="text-right"><a href="/">Retour à la page d'accueil</a></div>
+{%endblock%}

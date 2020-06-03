@@ -1,0 +1,64 @@
+{% extends "Layout.html" %}
+
+{%block heading%}
+<div class="text-right">
+  <small>{{MonCompte}}</small>
+  <div><a href="/logout">Se déconnecter</a></div>
+</div>
+{%endblock%}
+
+{%block body%}
+
+<div class="row">
+  <div class="col-5"></div>
+  <div class="text-bleu text-center">Information sur le livre</div>
+  <div class="col-5"></div>
+  <div class="card h-100 border-primary">
+    <div class="card-body">
+      <h5 class="card-title"><span class="presentation-livre">Titre : </span>{{bookInfo[0]['title']}}</h5>
+      <h6 class="card-text">
+        <div class="mb-1"><span class="presentation-livre">Auteur : </span> {{bookInfo[0]['author']}}</div>
+        <div class="mb-1"><span class="presentation-livre">Isbn : </span> {{bookInfo[0]['isbn']}}</div>
+        <div class="mb-1"><span class="presentation-livre">Année : </span> {{bookInfo[0]['year']}}</div>
+        <div class="mb-1"><span class="presentation-livre">Nb de notes: </span> {{bookInfo[1]["work_ratings_count"]}}</div>
+        <div class="mb-1"><span class="presentation-livre">Moyenne des notes: </span> {{bookInfo[1]["average_rating"]}}</div>
+        <div class="mb-1"><a href="https://www.goodreads.com/search?q={{bookInfo[0]['title']}}">Goodreads page</a></div>
+      </h6>
+    </div>
+  </div>
+</div>
+
+<div class="dropdown-divider"></div>
+<div class="text-bleu mb-3">Écrire un commentaire sur le livre</div>
+    <form action="/livre/{{bookInfo[0]['isbn']}}" method="post" class="form-border">
+      <div class="form-row row">
+        <div class="form-group col-sm">
+          <label>Commentaire</label>
+          <textarea class="form-control col-4" type="text" name="commentaire" placeholder="Ecrire un commentaire" rows="3"></textarea>
+        </div>
+      </div>
+    <div class="form-group"></div>
+    <label>Note</label>
+    <select class="form-control col-2 mb-4" type="integer" name="note" placeholder="Donner une note">
+      {%for i in range(1,6)%}
+        <option value="{{i}}">{{i}}</option>
+      {%endfor%}
+    </select>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Valider</button>
+    </div>
+  </form>
+  <div class="dropdown-divider"></div>
+    <div class="text-bleu mb-3">Voici l'avis des lecteurs</div>
+    {%for av in avis%}
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mb-2">
+          <p class="mb-1">{{av['name']}} a donné l'avis suivant :</p>
+          <p class="mb-1">{{av['commentaire']}}</p>
+          <small>Noté: {{av['note']}} / 5</small>
+      </a>
+  </div>
+    {%endfor%}
+  <div><a href="/">Retour à la page d'accueil</a></div>
+  <div><a href="/MonCompte">Retour vers la Recherche</a></div>
+{%endblock%}

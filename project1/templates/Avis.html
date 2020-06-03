@@ -1,0 +1,17 @@
+{% extends "Layout.html" %}
+
+{%block heading%}
+<h2>Quelle est votre avis sur ce livre ?</h2>
+{%endblock%}
+
+{%block body%}
+    <div class="form-group">
+      <select class="form-control" name="livre">
+        {% for livre in livres %}
+          <option value="{{livre.title}}">{{livre.title}} de {{livre.author}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  <div><a href="/">Retour à la page d'accueil</a></div>
+  <div><a href="/MonCompte">Retour vers la Recherche</a></div>
+{%endblock%}

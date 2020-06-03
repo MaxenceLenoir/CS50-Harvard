@@ -1,0 +1,25 @@
+{% extends "Layout.html" %}
+
+{%block heading%}
+<div class="text-right">
+  <small>{{MonCompte}}</small>
+  <div><a href="/logout">Se déconnecter</a></div>
+</div>
+{%endblock%}
+
+{%block body%}
+<div class="text-bleu text-center mb-3">Rechercher un bouquin !</div>
+<form action="/MonCompte", method="POST">
+  <div class="form-group row mb-1">
+    <div class="col-4"></div>
+    <div class="col-4 mb-2">
+      <input type="text" class="form-control" name="livre" autofocus aria-describedby="bookhelp" placeholder="Isbn, Titre ou auteur">
+    </div>
+    <div class="col-4 mb-2">
+      <button class="btn btn-primary" type="submit">Rechercher</button>
+    </div>
+  </div>
+</form>
+<small class="form-text text-muted text-center">Exemple : 0375508325, Cosmos ou Carl Sagan</small>
+<div class="text-right"><a href="/">Retour à la page d'accueil</a></div>
+{%endblock%}
