@@ -1,0 +1,16 @@
+{% extends "Layout2.html" %}
+
+{%block heading%}
+<h2 class="text-center bienvenue">Bienvenue sur mon site</h2>
+{%endblock%}
+
+{%block body%}
+<form action="/Login" class="form-group" method="POST">
+  <div class="accueil text-center">Choisir un nom d'utilisateur
+    <div><input autocomplete="off" id="identifiant" autofocus class="form-control mt-3 mb-3" name="nom" placeholder="Username" type="text" widht="50">
+      <div><button id ="BoutonConnexion" class="btn btn-primary" type="submit">Se Connecter</button>
+      </div>
+    </div>
+  </div>  
+</form>
+{%endblock%}

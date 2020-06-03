@@ -1,0 +1,28 @@
+{% extends "Layout2.html" %}
+
+{%block heading%}
+<h2 class="text-center bienvenue">Liste des chaines disponibles</h2>
+{%endblock%}
+
+{%block body%}
+<ul id=#chaines>
+</ul>
+<div class="d-flex flex-column">
+  <form action="/Accueil" class="form-group " method="POST">
+    <span class="accueil ">Ajouter une nouvelle chaine</span>
+    <div>
+      <input autocomplete="off" id="nouvellechaine" autofocus class="form-control mb-3 mt-3 d-inline" name="nouvellechaine" placeholder="Nouvelle chaine" type="text">
+    </div>
+    <div>
+      <button id="ajoutchaine" class="btn btn-primary d-inline" type="submit">Ajouter une chaine</button>
+    </div>
+  </form>
+</div>
+<script>
+//  if (localStorage.getItem('derniere_chaine')!=undefined) {
+      // Redirect to last channel
+  //    let chaine = localStorage.getItem('derniere_chaine');    
+    //  window.location.replace('/chaine/' + chaine);   
+ // }
+</script>
+{%endblock%}
